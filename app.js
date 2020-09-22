@@ -28,8 +28,6 @@ app.get('/', function (req, res) {
   res.render('index', { tweets: tweetsDeEjemplo });
 });
 
-
-
 app.listen(3000, function () {
   console.log('Estas escuhando en el puerto 3000')
 });
