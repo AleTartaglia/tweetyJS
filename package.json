@@ -16,6 +16,7 @@
     "express": "^4.17.1",
     "lodash": "^4.17.20",
     "morgan": "^1.10.0",
-    "nunjucks": "^3.2.2"
+    "nunjucks": "^3.2.2",
+    "socketio": "^1.0.0"
   }
 }
