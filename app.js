@@ -11,7 +11,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 //requiriendo rutas by Middleware
-app.use('/', routes(io));
 
 //middleware de logeo con morgan
 app.use(morgan('tiny'))
@@ -27,3 +26,4 @@ app.use(express.static('./public'))
 }); */
 var server = app.listen(3000)
 var io = socketio.listen(server);
+app.use('/', routes(io));

@@ -6,6 +6,7 @@ const data = []
 function add(name, content) {
   let id = data.length
   data.push({ name: name, content: content, id: id });
+  return id
 }
 function list() {
   return _.cloneDeep(data);

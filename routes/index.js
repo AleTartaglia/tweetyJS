@@ -8,7 +8,7 @@ module.exports = function (io) {
   router.get('/', function (req, res) {
     let tweets = tweetBank.list();
     res.render('index', { tweets: tweets, showForm: true });
-    io.sockets.emit('newTweet', { /* tweet info */ });
+
   });
 
   router.get('/users/:name', function (req, res) {
@@ -30,7 +30,8 @@ module.exports = function (io) {
   router.post('/tweets', function (req, res) {
     var name = req.body.name;
     var text = req.body.text;
-    tweetBank.add(name, text);
+    let id = tweetBank.add(name, text);
+    io.emit('newTweet', { name: name, text: text, id: id });
     res.redirect('/');
   });
 

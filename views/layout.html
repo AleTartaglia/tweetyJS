@@ -93,8 +93,24 @@
     });
     // Cuando el evento 'new_tweet' es disparado, hacé algo con el tweet enviado.
     socket.on('newTweet', function (tweet) {
-      console.log(tweet);
+
+
       alert('Actualizando... fijate en la consola...');
+
+      let tweetsDiv = document.getElementById("tweets")
+      let a = document.createElement("a")
+      a.href = `/users/${tweet.name}`
+      a.text = `${tweet.text}`
+      let h4 = document.createElement("h4")
+      h4.append(a)
+      tweetsDiv.append(h4)
+
+      let par = document.createElement("p")
+      let aTwo = document.createElement("a")
+      aTwo.href = `/tweets/${tweet.id}`
+      aTwo.text = `${tweet.text}`
+      par.append(aTwo)
+      tweetsDiv.append(par)
       // Alguna lógica para agregar el tweet al DOM
     }); 
   </script>
