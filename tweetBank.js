@@ -1,8 +1,11 @@
 const _ = require('lodash');
 
 const data = []
+
+
 function add(name, content) {
-  data.push({ name: name, content: content });
+  let id = data.length
+  data.push({ name: name, content: content, id: id });
 }
 function list() {
   return _.cloneDeep(data);
