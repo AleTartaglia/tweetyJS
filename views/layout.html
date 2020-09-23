@@ -97,7 +97,7 @@
 
       alert('Actualizando... fijate en la consola...');
 
-      let tweetsDiv = document.getElementById("tweets")
+      /* let tweetsDiv = document.getElementById("tweets")
       let a = document.createElement("a")
       a.href = `/users/${tweet.name}`
       a.text = `${tweet.text}`
@@ -110,7 +110,14 @@
       aTwo.href = `/tweets/${tweet.id}`
       aTwo.text = `${tweet.text}`
       par.append(aTwo)
-      tweetsDiv.append(par)
+      tweetsDiv.append(par) */
+      var tweetsContainer = document.querySelector("#tweets");
+      var newName = document.createElement("h4")
+      var newTweet = document.createElement("p")
+      newName.innerHTML = `<h4><a href="/users/${tweet.name}">${tweet.name}</a></h4>`;
+      newTweet.innerHTML = `<p><a href="/tweets/${tweet.id}">${tweet.text}</a></p>`;
+      tweetsContainer.append(newName)
+      tweetsContainer.append(newTweet)
       // Alguna lógica para agregar el tweet al DOM
     }); 
   </script>
